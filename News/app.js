@@ -5,8 +5,9 @@ http.createServer(function (req, res) {
         var body = '';
         var parametros = req.url.split('?');
         switch (parametros[0]) {
-            case '/update_news':{ 
-                console.log('hello world');    
+            case '/update_news':{
+                var update_news = require('./includes/update_news.js');
+                update_news.execute_insert_news();  
             }
         }
     }
