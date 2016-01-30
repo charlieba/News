@@ -22,3 +22,18 @@
 exports.generateID = function (str, mongoose, md5) {
     return mongoose.Types.ObjectId(md5(string_to_slug(str)).substring(0, 24)).toString();
 };
+exports.app_conf = function (lang, tipo, objeto) {
+    var config = {
+        "ES": {
+            "BBC": {
+                "TECNOLOGY": "http://www.bbc.com/mundo/temas/tecnologia/index.xml",
+                "TABLE": ""
+            }
+        }
+    };
+    if (typeof config[lang][tipo][objeto] !== 'undefined') {
+        return config[lang][tipo][objeto] + "";
+    } else {
+        return "";
+    }
+}
