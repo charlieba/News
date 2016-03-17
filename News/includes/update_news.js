@@ -3,6 +3,7 @@ exports.execute_insert_news = function (req,res, mongoose, NewsSchema, md5) {
     var modelNameNews = 'tbl_news';
     News = mongoose.model(modelNameNews, NewsSchema);
     var keyID = '123456asdfsafssfsfsasfjdlasfjlkjsf12345678';
+    console.log('commit');
     News.update({
         '_id': params.generateID(keyID, mongoose, md5).toString()
     },{
