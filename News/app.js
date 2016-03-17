@@ -1,7 +1,6 @@
 ﻿var http = require('http');
 var md5 = require('MD5');
 var mongoose = require("mongoose");
-var request = require('request');
 //var port = process.env.port || 3021;
 var uristring ='mongodb://localhost/db_news';
 var options = {
@@ -42,7 +41,7 @@ http.createServer(function (req, res) {
         switch (parametros[0]) {
             case '/update_news':{
                 var update_news = require('./includes/update_news.js');
-                update_news.execute_insert_news(request, req, res, mongoose, NewsSchema,md5);  
+                update_news.execute_insert_news(req, res, mongoose, NewsSchema,md5);  
             }
         }
     }
